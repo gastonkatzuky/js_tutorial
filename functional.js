@@ -27,3 +27,32 @@ function getUrl(elements) {
   return elements.map(element => `https://example.com/${urlify(element)}`);
 }
 console.log(getUrl(states));
+
+// singles: Imperative version
+function imperativeSingles(elements) {
+  let singles = [];
+  elements.forEach(function(element) {
+    if (element.split(/\s+/).length === 1) {
+      singles.push(element);
+    }
+  });
+  return singles;
+}
+console.log(imperativeSingles(states));
+
+// singles: Functional version
+function functionalSingles(elements) {
+  return elements.filter(element => element.split(/\s+/).length === 1);
+}
+console.log(functionalSingles(states));
+
+
+function dakotaInclude(elements){
+  return elements.filter(element => element.includes('Dakota'));
+}
+console.log(dakotaInclude(states));
+
+function functionalDoubles(elements){
+  return elements.filter(element => element.split(/\s+/).length ===2);
+}
+console.log(functionalDoubles(states));
