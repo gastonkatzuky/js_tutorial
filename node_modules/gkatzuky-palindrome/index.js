@@ -22,7 +22,11 @@ function Phrase(content) {
 
   // Returns true for a palindrome, false otherwise.
   this.palindrome = function palindrome(string) {
-    return this.processedContent() === this.processedContent().reverse();
+    if (this.processedContent()) {
+      return this.processedContent() === this.processedContent().reverse();
+    } else {
+      return false;
+    }
   }
 
     // Makes the phrase LOUDER.
